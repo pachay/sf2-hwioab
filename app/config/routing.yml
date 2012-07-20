@@ -1,21 +1,24 @@
+AiloveUserBundle:
+    resource: "@AiloveUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
-homepage:
-    pattern:  /
-    defaults: { _controller: SonataPageBundle:Page:catchAll }
+#homepage:
+#    pattern:  /
+#    defaults: { _controller: SonataPageBundle:Page:catchAll }
 
 sonata_user_impersonating:
     pattern:  /
-    defaults: { _controller: SonataPageBundle:Page:catchAll }
+    defaults: { _controller: SonataDemoBundle:Demo:car }
 
 sonata_demo:
     resource: "@SonataDemoBundle/Resources/config/routing/demo.xml"
 
-
-fos_user_security:
-    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+#fos_user_security:
+#    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
@@ -32,14 +35,6 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /change-password
-
-sonata_page_cache:
-    resource: '@SonataPageBundle/Resources/config/routing/cache.xml'
-    prefix: /
-
-sonata_page_exceptions:
-    resource: '@SonataPageBundle/Resources/config/routing/exceptions.xml'
-    prefix: /page
 
 sonata_media_gallery:
     resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
@@ -74,8 +69,25 @@ soanata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
     prefix: /admin
 
-catchAll:
-    pattern:  /{path}
-    defaults: { _controller: SonataPageBundle:Page:catchAll }
-    requirements:
-        path: .*
+#catchAll:
+#    pattern:  /{path}
+#    defaults: { _controller: SonataPageBundle:Page:catchAll }
+#    requirements:
+#        path: .*
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /connect
+
+# overrides the fosub /login page
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+
+facebook_check:
+    pattern: /login/check-{service}
+    defaults: { _controller: HWIOAuthBundle:Connect:connectService }
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /login

@@ -5,7 +5,7 @@ imports:
 
     # Sonata Bundles
     - { resource: sonata/sonata_admin.yml }
-    - { resource: sonata/sonata_page.yml }
+    #- { resource: sonata/sonata_page.yml }
     - { resource: sonata/sonata_block.yml }
     - { resource: sonata/sonata_media.yml }
     - { resource: sonata/sonata_formatter.yml }
@@ -86,3 +86,23 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+hwi_oauth:
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name: secured_area
+    connect:
+        account_connector: ailove.facebook.user_provider
+        registration_form_handler: ailove.oauth.registration_form_handler
+        registration_form: ailove.oauth.registration_form
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           427396743978549
+            client_secret:       d093ead4d9baca34af7f47396748a9ee
+            scope:               ""
+
+    fosub:
+        username_iterations: 30
+
+        properties:
+            facebook: facebookId

@@ -4,6 +4,6 @@
 sonata_user:
     security_acl: false
     google_authenticator:
-        enabled: false
-        server: sonata-project.org
+        enabled: true
+        server: sandbox.local
 

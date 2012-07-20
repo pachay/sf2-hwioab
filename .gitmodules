@@ -139,15 +139,9 @@
 [submodule "vendor/exporter"]
 	path = vendor/exporter
 	url = git://github.com/sonata-project/exporter.git
-[submodule "vendor/google-authenticator"]
-	path = vendor/google-authenticator
-	url = git://github.com/rande/GoogleAuthenticator.php.git
-[submodule "vendor/bundles/Sensio/Bundle/BuzzBundle"]
-	path = vendor/bundles/Sensio/Bundle/BuzzBundle
-	url = https://github.com/sensio/SensioBuzzBundle.git
-[submodule "vendor/bundles/Knp/Bundle/OAuthBundle"]
-	path = vendor/bundles/Knp/Bundle/OAuthBundle
-	url = https://github.com/KnpLabs/KnpOAuthBundle.git
 [submodule "vendor/bundles/HWI/Bundle/OAuthBundle"]
 	path = vendor/bundles/HWI/Bundle/OAuthBundle
 	url = git://github.com/hwi/HWIOAuthBundle.git
+[submodule "vendor/google-authenticator"]
+	path = vendor/google-authenticator
+	url = git://github.com/rande/GoogleAuthenticator.php.git

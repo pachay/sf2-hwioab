@@ -1,4 +1,6 @@
 security:
+    factories:
+        - "%kernel.root_dir%/../vendor/bundles/HWI/Bundle/OAuthBundle/Resources/config/security_factory.xml"
     encoders:
         "Application\Sonata\UserBundle\Entity\User":
             algorithm: sha512
@@ -52,6 +54,30 @@ security:
                 failure_path:   null
             logout:       true
             anonymous:    true
+#        login:
+#            pattern:    ^/secured/login$
+#            security:   false
+        secured_area:
+#            pattern:    ^/secured/
+            oauth:
+                resource_owners:
+                    facebook:           "/login/check-facebook"
+                login_path:        /login
+                failure_path:      /login
+
+                oauth_user_provider:
+                    service: ailove.facebook.user_provider
+
+#                oauth_provider:    oauth
+#                authorization_url: https://github.com/login/oauth/authorize
+#                access_token_url:  https://github.com/login/oauth/access_token
+#                infos_url:         https://github.com/api/v2/json/user/show
+#                username_path:     user.login
+#                client_id:         7bc4260e180006c6358d
+#                secret:            dd9207e7a7af239441fe9faad2a7ac8eda09188d
+#                scope:             user
+#                check_path:        /secured/login_check
+#                login_path:        /secured/login
 
     access_control:
         # URL of FOSUserBundle which need to be available to anonymous users

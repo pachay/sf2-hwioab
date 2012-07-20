@@ -1,0 +1,34 @@
+parameters:
+#    ailove_user.example.class: Ailove\UserBundle\Example
+
+services:
+#    ailove_user.example:
+#        class: %ailove_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    ailove.form.handler.registration:
+        class: Ailove\UserBundle\Form\Handler\RegistrationFormHandler
+        parent: fos_user.registration.form.handler.default
+        scope: request
+
+    ailove.facebook.user_provider:
+        class: Ailove\UserBundle\Security\Provider\FacebookUserProvider
+        public: false
+        arguments: ["@fos_user.user_manager"]
+
+    ailove.oauth.registration_form_handler:
+        class: Ailove\UserBundle\Form\Handler\OAuthRegistrationFormHandler
+        arguments: [@fos_user.user_manager]
+
+    ailove.oauth.registration_form_type:
+        class: Ailove\UserBundle\Form\Type\OAuthRegistrationFormType
+        tags:
+            - { name: form.type, alias: ailove_oauth_user_registration }
+
+    ailove.oauth.registration_form:
+        factory_method: createNamed
+        factory_service: form.factory
+        class: Symfony\Component\Form\Form
+        arguments:
+            - 'ailove_oauth_user_registration'
+            - 'ailove_oauth_user_registration'

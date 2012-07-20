@@ -30,7 +30,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
 
-
             // KNP HELPER BUNDLES
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
@@ -39,10 +38,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-
-            // PAGE
-            new Sonata\PageBundle\SonataPageBundle(),
-            new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
 
             // NEWS
             new Sonata\NewsBundle\SonataNewsBundle(),
@@ -70,6 +65,9 @@ class AppKernel extends Kernel
 
             // Enable this if you want to audit backend action
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
+
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new Ailove\UserBundle\AiloveUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

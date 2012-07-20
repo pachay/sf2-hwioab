@@ -1,6 +1,6 @@
 [symfony]
     git=git://github.com/symfony/symfony.git
-    version=v2.0.12
+    version=v2.0.16
 
 [twig]
     git=git://github.com/fabpot/Twig.git
@@ -103,6 +103,7 @@
 [FOSUserBundle]
     git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
     target=/bundles/FOS/UserBundle
+    version=origin/1.2.x
 
 [SonatajQueryBundle]
     git=git://github.com/sonata-project/SonatajQueryBundle.git
@@ -175,8 +176,8 @@
     git=git://github.com/sonata-project/Gaufrette.git
     target=/gaufrette
 
-[buzz]
-    git=git://github.com/kriswallsmith/Buzz.git
+[Buzz]
+    git=https://github.com/kriswallsmith/Buzz.git
     target=/buzz
 
 [SonataDoctrineExtensions]
@@ -202,3 +203,11 @@
 [Exporter]
     git=git://github.com/sonata-project/exporter.git
     target=/exporter
+
+[HWIOAuthBundle]
+    git=git://github.com/hwi/HWIOAuthBundle.git
+    target=/bundles/HWI/Bundle/OAuthBundle
+
+[GoogleAuthenticator]
+    git=git://github.com/rande/GoogleAuthenticator.php.git
+    target=/google-authenticator

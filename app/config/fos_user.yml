@@ -5,6 +5,13 @@ fos_user:
     db_driver:      orm # can be orm or odm
     firewall_name:  main
     user_class:     Application\Sonata\UserBundle\Entity\User
+    use_username_form_type: true
+    from_email:
+        address:        %mailer_from_email%
+        sender_name:    %mailer_from_name%
+    registration:
+        form:
+            handler: ailove.form.handler.registration
 
     group:
         group_class: Application\Sonata\UserBundle\Entity\Group
