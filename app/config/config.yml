@@ -91,18 +91,24 @@ hwi_oauth:
     # name of the firewall in which this bundle is active, this setting MUST be set
     firewall_name: secured_area
     connect:
-        account_connector: ailove.facebook.user_provider
+        account_connector: hwi_oauth.user.provider.fosub_bridge
         registration_form_handler: ailove.oauth.registration_form_handler
         registration_form: ailove.oauth.registration_form
     resource_owners:
         facebook:
             type:                facebook
-            client_id:           427396743978549
-            client_secret:       d093ead4d9baca34af7f47396748a9ee
+            client_id:           %facebook_client_id% 
+            client_secret:       %facebook_client_secret%
+            scope:               ""
+        vkontakte:
+            type:                vkontakte
+            client_id:           %vkontakte_client_id%
+            client_secret:       %vkontakte_client_secret%
             scope:               ""
 
     fosub:
         username_iterations: 30
 
         properties:
-            facebook: facebookId
+            facebook: facebookUid
+            vkontakte: vkontakteUid

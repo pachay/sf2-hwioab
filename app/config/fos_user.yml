@@ -4,7 +4,7 @@
 fos_user:
     db_driver:      orm # can be orm or odm
     firewall_name:  main
-    user_class:     Application\Sonata\UserBundle\Entity\User
+    user_class:     Ailove\UserBundle\Entity\User
     use_username_form_type: true
     from_email:
         address:        %mailer_from_email%
@@ -23,5 +23,6 @@ doctrine:
             default:
                 mappings:
                     FOSUserBundle: ~
-                    ApplicationSonataUserBundle: ~
+                    AiloveUserBundle: ~
                     SonataUserBundle: ~
+                    ApplicationSonataUserBundle: ~

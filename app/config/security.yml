@@ -2,7 +2,7 @@ security:
     factories:
         - "%kernel.root_dir%/../vendor/bundles/HWI/Bundle/OAuthBundle/Resources/config/security_factory.xml"
     encoders:
-        "Application\Sonata\UserBundle\Entity\User":
+        "Ailove\UserBundle\Entity\User":
             algorithm: sha512
             encode_as_base64: false
             iterations: 1
@@ -62,11 +62,12 @@ security:
             oauth:
                 resource_owners:
                     facebook:           "/login/check-facebook"
+                    vkontakte:          "/login/check-vkontakte"
                 login_path:        /login
                 failure_path:      /login
 
                 oauth_user_provider:
-                    service: ailove.facebook.user_provider
+                    service: hwi_oauth.user.provider.fosub_bridge
 
 #                oauth_provider:    oauth
 #                authorization_url: https://github.com/login/oauth/authorize

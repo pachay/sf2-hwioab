@@ -11,11 +11,6 @@ services:
         parent: fos_user.registration.form.handler.default
         scope: request
 
-    ailove.facebook.user_provider:
-        class: Ailove\UserBundle\Security\Provider\FacebookUserProvider
-        public: false
-        arguments: ["@fos_user.user_manager"]
-
     ailove.oauth.registration_form_handler:
         class: Ailove\UserBundle\Form\Handler\OAuthRegistrationFormHandler
         arguments: [@fos_user.user_manager]
