@@ -12,7 +12,7 @@ AiloveUserBundle:
 
 sonata_user_impersonating:
     pattern:  /
-    defaults: { _controller: SonataDemoBundle:Demo:car }
+    defaults: { _controller: AiloveUserBundle:Default:index }
 
 sonata_demo:
     resource: "@SonataDemoBundle/Resources/config/routing/demo.xml"
