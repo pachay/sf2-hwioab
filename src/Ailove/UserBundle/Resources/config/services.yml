@@ -27,3 +27,13 @@ services:
         arguments:
             - 'ailove_oauth_user_registration'
             - 'ailove_oauth_user_registration'
+
+    ailove.user.admin.user:
+        id: ailove.user.admin.user
+        class: Ailove\UserBundle\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: ailove_users, label: users, label_translator_strategy: sonata.admin.label.strategy.native, router_builder: sonata.admin.route.path_info }
+        arguments:
+            - null
+            - 'Ailove\UserBundle\Entity\User'
+            - null

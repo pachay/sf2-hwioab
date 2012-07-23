@@ -25,4 +25,38 @@ class AiloveUserExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
+
+    /**
+     * @param array $config
+     */
+    public function registerDoctrineMapping(array $config)
+    {
+        foreach ($config['class'] as $type => $class) {
+            if (!class_exists($class)) {
+                return;
+            }
+        }
+
+        $collector = DoctrineCollector::getInstance();
+
+        $collector->addAssociation($config['class']['user'], 'mapManyToMany', array(
+            'fieldName'       => 'groups',
+            'targetEntity'    => $config['class']['group'],
+            'cascade'         => array( ),
+            'joinTable'       => array(
+                 'name' => $config['table']['user_group'],
+                 'joinColumns' => array(
+                     array(
+                         'name' => 'user_id',
+                         'referencedColumnName' => 'id',
+                          ),
+                     ),
+                 'inverseJoinColumns' => array( array(
+                      'name' => 'group_id',
+                                    'referencedColumnName' => 'id',
+                                 )),
+                              )
+                         ));
+                   }
+
 }

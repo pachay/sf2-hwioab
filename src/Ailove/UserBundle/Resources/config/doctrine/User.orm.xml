@@ -12,6 +12,19 @@
 
         <field name="vkontakteUid"     type="string"     column="vkontakte_uid"  length="255"    nullable="true" />
 
+        <many-to-many field="groups" target-entity="Application\Sonata\UserBundle\Entity\Group">
+            <cascade>
+            </cascade>
+            <join-table name="ailove_user_group">
+                <join-columns>
+                    <join-column id="User_id" referenced-column-name="id" />
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column id="Group_id" referenced-column-name="id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+
     </entity>
 
 </doctrine-mapping>
