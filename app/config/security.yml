@@ -64,6 +64,7 @@ security:
                     facebook:           "/login/check-facebook"
                     vkontakte:          "/login/check-vkontakte"
                     twitter:            "/login/check-twitter"
+                    google:             "/login/check-google"
                 login_path:        /login
                 failure_path:      /login
 

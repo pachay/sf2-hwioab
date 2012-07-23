@@ -110,6 +110,11 @@ hwi_oauth:
             client_id:           %twitter_client_id%
             client_secret:       %twitter_client_secret%
             scope:               ""
+        google:
+            type:                google
+            client_id:           %google_client_id%
+            client_secret:       %google_client_secret%
+            scope:               "https://www.googleapis.com/auth/userinfo.profile"
 
     fosub:
         username_iterations: 30
@@ -118,3 +123,4 @@ hwi_oauth:
             facebook: facebookUid
             vkontakte: vkontakteUid
             twitter: twitterUid
+            google: gplusUid
