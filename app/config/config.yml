@@ -105,6 +105,11 @@ hwi_oauth:
             client_id:           %vkontakte_client_id%
             client_secret:       %vkontakte_client_secret%
             scope:               ""
+        twitter:
+            type:                twitter
+            client_id:           %twitter_client_id%
+            client_secret:       %twitter_client_secret%
+            scope:               ""
 
     fosub:
         username_iterations: 30
@@ -112,3 +117,4 @@ hwi_oauth:
         properties:
             facebook: facebookUid
             vkontakte: vkontakteUid
+            twitter: twitterUid

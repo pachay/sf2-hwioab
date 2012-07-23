@@ -63,6 +63,7 @@ security:
                 resource_owners:
                     facebook:           "/login/check-facebook"
                     vkontakte:          "/login/check-vkontakte"
+                    twitter:            "/login/check-twitter"
                 login_path:        /login
                 failure_path:      /login
 
